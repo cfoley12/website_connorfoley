@@ -1,2 +1,4 @@
-# Web_Scheduler_37_repository
-The final project repo for Web_Scheduler_37
+Schedule Planning Website
+=========================
+
+See the [Getting Started](https://github.com/eecs183/WebScheduler/wiki/Getting-Started) guide for more information.
