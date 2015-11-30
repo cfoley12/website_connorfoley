@@ -3,7 +3,6 @@ h1 {
 }
 
 table {
-	text-align: center;
 	border: 1px;
 	border-style: groove;
 }
@@ -11,4 +10,8 @@ table {
 img {
 	width: 100px;
 	height: 100px;
+}
+
+nav {
+	text-align: center;
 }
