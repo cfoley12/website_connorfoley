@@ -32,3 +32,7 @@ img.round {
 ul.no_bullets {
 	list-style: none;
 }
+
+table.nav {
+	background-color: #0066CC;
+}
