@@ -17,3 +17,11 @@ def about():
     options['terms'] = get_terms()
 
     return render_template('about.html', **options)
+
+    @app.route('/rankings.html')
+def rankings():
+    options = {}
+
+    options['terms'] = get_terms()
+
+    return render_template('rankings.html', **options)
