@@ -18,7 +18,7 @@ def about():
 
     return render_template('about.html', **options)
 
-    @app.route('/rankings.html')
+@app.route('/rankings.html')
 def rankings():
     options = {}
 
