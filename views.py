@@ -26,7 +26,7 @@ def rankings():
 
     return render_template('rankings.html', **options)
 
-@app.route('mis.html')
+@app.route('/mis.html')
 def mis():
     options = {}
 
