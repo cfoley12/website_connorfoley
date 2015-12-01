@@ -10,7 +10,7 @@ def index():
 
     return render_template('index.html', **options)
 
-@app.route('/about.html')
+@app.route('/about')
 def about():
     options = {}
 
