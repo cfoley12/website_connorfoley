@@ -1,11 +1,13 @@
 h1 {
 	text-align: center;
+	font-family: monospace;
 }
 
 table {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
+	font-family: monospace;
 }
 
 body {
