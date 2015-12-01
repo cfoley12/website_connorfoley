@@ -25,3 +25,11 @@ def rankings():
     options['terms'] = get_terms()
 
     return render_template('rankings.html', **options)
+
+@app.route('/rankings/mis.html')
+def mis():
+    options = {}
+
+    options['terms'] = get_terms()
+
+    return render_template('mis.html', **options)
