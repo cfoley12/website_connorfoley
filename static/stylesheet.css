@@ -26,3 +26,7 @@ img.round {
 	height: 50px;
 	border-radius: 25px;
 }
+
+ul.no_bullets {
+	list-style: none;
+}
