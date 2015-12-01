@@ -8,6 +8,10 @@ table {
 	text-align: center;
 }
 
+body {
+	background-color: #ffcb05;
+}
+
 img {
 	width: 100px;
 	height: 100px;
