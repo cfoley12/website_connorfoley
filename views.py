@@ -1,7 +1,6 @@
 from flask import render_template, request
 from app import app
 from running_database import *
-from schedule_api import *
 
 @app.route('/')
 def index():
