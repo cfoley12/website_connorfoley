@@ -34,3 +34,6 @@ def mis():
     options['terms'] = get_terms()
 
     return render_template('mis.html', **options)
+
+
+	

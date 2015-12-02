@@ -2,7 +2,6 @@ import json
 import time
 import requests
 import psycopg2
-import sys
 import re
 
 def get_courses():
