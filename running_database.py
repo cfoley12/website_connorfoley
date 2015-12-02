@@ -40,13 +40,13 @@ def get_courses():
 # which will look similar but the main difference is that the "query" will be different.
 
 def get_races(course):
-     '''
+    ''' 
     Return the PostgresSQL data for all of the
     valid courses.
     '''
     #Define our connection string
     conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
-
+    
     # print the connection string we will use to connect
     print "Connecting to database\n ->%s" % (conn_string)
 
@@ -74,7 +74,7 @@ def get_races(course):
 # its just changing the query.
 
 def get_results(race):
-     '''
+    ''' 
     Return the PostgresSQL data for all of the
     valid courses.
     '''
