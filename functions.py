@@ -1,3 +1,6 @@
+import numpy
+
+
 def mean():
 
 	for value in dict[time]:
@@ -28,13 +31,10 @@ def mins_to_secs(mins, secs):
 	temp_time = ((mins * 60) + secs)
 	return temp_time
 
-#def list_time_conversion():
+def calc_speed_rating(myList):
 
-	#temp_dict = {}
-	#for value in my_dict():
-		#temp_dict[][time]
-		#for t in temp_dict[t][time]
-
+	numpy.std(zip(*myList)[3])
+	
 
 
 if __name__ == "__main__":
