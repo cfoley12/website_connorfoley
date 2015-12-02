@@ -31,11 +31,38 @@ def mins_to_secs(mins, secs):
 	temp_time = ((mins * 60) + secs)
 	return temp_time
 
+def st_dev_course_means(myList1, myList2, myList3, myList4, 
+	myList5, myList6, myList7, myList8, myList9, myList10):
+
+	mean1 = mean_of_list(myList1)
+	mean2 = mean_of_list(myList2)
+	mean3 = mean_of_list(myList3)
+	mean4 = mean_of_list(myList4)
+	mean5 = mean_of_list(myList5)
+	mean6 = mean_of_list(myList6)
+	mean7 = mean_of_list(myList7)
+	mean8 = mean_of_list(myList8)
+	mean9 = mean_of_list(myList9)
+	mean10 = mean_of_list(myList10)
+	mean_list = {mean1, mean2, mean3, mean4, mean5, mean6, mean7, mean8, mean9, mean10}
+	
+	st_dev_michigan = numpy.std(mean_list)
+	return st_dev_michigan
+
+def mean_of_list(myList):
+	
+	for i in myList[i][3]:
+		sumList += myList[i][3]
+	mean = (sumList / len(input[3]))
+	return mean
+
 def calc_speed_rating(myList):
 
-	numpy.std(zip(*myList)[3])
-	
+	std_dev_course = numpy.std(zip(*myList)[3])
+	st_dev_michigan = st_dev_course_means(myList1, myList2, myList3, myList4, myList5, myList6, myList7, myList8, myList9, myList10)
 
+	speed_rating = 100 + (std.dev_course * st_dev_michigan * 12)
+	return speed_rating
 
 if __name__ == "__main__":
 	splitter()
