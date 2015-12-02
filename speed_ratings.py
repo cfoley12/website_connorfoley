@@ -43,9 +43,17 @@ def st_dev_michigan(myList1, myList2, myList3, myList4,
 	mean9 = float(mean_of_list(myList9))
 	mean10 = float(mean_of_list(myList10))
 
-	mean_list = {mean1, mean2, mean3, mean4, mean5, mean6, mean7, mean8, mean9, mean10}
+	#mean_list = (mean1, mean2, mean3, mean4, mean5, mean6, mean7, mean8, mean9, mean10)
+
+	mean_temp = float((mean1 + mean2 + mean3 + mean4 + mean5 + mean6 + mean7 + mean8 + mean9 + mean10)/10)
 	
-	st_dev_michigan = float(numpy.std(mean_list))
+	sigma_value = (float(((mean1 - mean_temp)**2) + ((mean2 - mean_temp)**2) + ((mean3 - mean_temp)**2) + ((mean4 - mean_temp)**2) + ((mean5 - mean_temp)**2) + 
+		((mean6 - mean_temp)**2) + ((mean7 - mean_temp)**2) + ((mean8 - mean_temp)**2) + ((mean9 - mean_temp)**2) + ((mean10 - mean_temp)**2)))
+	
+	st_dev_michigan = float((sigma_value/10)**0.5)
+
+	#st_dev_michigan = float(numpy.std(mean_list))
+
 	return st_dev_michigan
 
 def mean_michigan(myList1, myList2, myList3, myList4, 
@@ -443,6 +451,10 @@ if __name__ == "__main__":
 	st_dev_michigan = st_dev_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
 
 	print st_dev_michigan
+
+	mis_std_dev = std_dev_course(mis)
+
+	print mis_std_dev
 
 
 
