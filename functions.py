@@ -20,7 +20,7 @@ def splitter(time):
 	mins = int(time_list[0])
 	secs = float(time_list[1])
 	time_in_secs = float(mins_to_secs(mins, secs))
-
+	print time_in_secs
 	return time_in_secs
 
 def mins_to_secs(mins, secs):
@@ -53,16 +53,21 @@ def mean_of_list(myList):
 	mean = (sumList / len(input[3]))
 	return mean
 
-def calc_speed_rating(myList):
+def std_dev_course(myList):
 
 	std_dev_course = numpy.std(zip(*myList)[3])
-	st_dev_michigan = st_dev_course_means(myList1, myList2, myList3, myList4, myList5, myList6, myList7, myList8, myList9, myList10)
+	return std_dev_course
+
+def calc_speed_rating(st_dev_michigan, std_dev_course):
 
 	speed_rating = 100 + (std.dev_course * st_dev_michigan * 12)
 	return speed_rating
 
 if __name__ == "__main__":
-	splitter()
+	
+	time = "12:34"
+	
+	splitter(time)
 
 
 
