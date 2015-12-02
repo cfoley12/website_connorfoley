@@ -14,17 +14,14 @@ def mean():
 
 	return mean
 
-def splitter():
+def splitter(time):
 
-	time = "12:34"
-	
 	time_list = time.split(":", 2)
-	
 	mins = int(time_list[0])
 	secs = float(time_list[1])
-
 	time_in_secs = float(mins_to_secs(mins, secs))
-	print time_in_secs
+
+	return time_in_secs
 
 def mins_to_secs(mins, secs):
 
