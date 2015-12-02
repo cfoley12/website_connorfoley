@@ -48,9 +48,9 @@ def st_dev_course_means(myList1, myList2, myList3, myList4,
 
 def mean_of_list(myList):
 	
-	for i in myList[i][3]:
-		sumList += myList[i][3]
-	mean = (sumList / len(input[3]))
+	for row in myList:
+		sumList += row[6]
+	mean = (sumList / len(input[6]))
 	return mean
 
 def std_dev_course(myList):
