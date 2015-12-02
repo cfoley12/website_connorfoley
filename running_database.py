@@ -24,8 +24,8 @@ def get_courses():
     print "Connected!\n"
 
     # creating the query
-    # query =  "SELECT mis_states_2015  FROM information_schema.tables WHERE table_schema='public' AND column_name='identifier'   AND table_type='BASE TABLE';"
-    query =  "SELECT mis_states_2015 FROM information_schema.columns WHERE column_name='identifier';"
+    query =  "SELECT mis_states_2015  FROM information_schema.tables WHERE table_schema='public' AND column_name='identifier'   AND table_type='BASE TABLE';"
+    # query =  "SELECT mis_states_2015 FROM information_schema.columns WHERE column_name='identifier';"
 
     cursor.execute(query,)
     conn.commit()

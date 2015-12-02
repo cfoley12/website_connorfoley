@@ -33,11 +33,3 @@ def mis():
     options['terms'] = get_terms()
 
     return render_template('mis.html', **options)
-
-@app.route('/mis_d1.html')
-def mis_d1():
-    options = {}
-
-    options['terms'] = get_terms()
-
-    return render_template('mis_d1.html', **options)
