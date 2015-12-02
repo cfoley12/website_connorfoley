@@ -78,17 +78,17 @@ def std_dev_course(myList):
 	std_dev_course = float(numpy.std(zip(*myList)[6]))
 	return std_dev_course
 
-def z_score_course(time_in_secs, mean_course, std_dev_course):
+def z_score_athlete(time_in_secs, mean_course, std_dev_course):
 
-	z_score_course = float((time_in_secs - mean_course) / (std_dev_course))
+	z_score_athlete = float((time_in_secs - mean_course) / (std_dev_course))
+
+	return z_score_athlete
+
+def z_score_course(mean_course, mean_michigan, std_dev_michigan):
+
+	z_score_course = float((mean_course - mean_michigan) / (std_dev_michigan))
 
 	return z_score_course
-
-def z_score_michigan(mean_course, mean_michigan, std_dev_michigan):
-
-	z_score_michigan = float((mean_course - mean_michigan) / (std_dev_michigan))
-
-	return z_score_michigan
 
 def calc_speed_rating(z_score_michigan, z_score_course):
 
