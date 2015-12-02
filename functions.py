@@ -14,17 +14,20 @@ def mean():
 
 	return mean
 
-def splitter():
+def splitter(myList):
 
 	time = "12:34"
 	
-	time_list = time.split(":", 2)
-	
-	mins = int(time_list[0])
-	secs = float(time_list[1])
+	time_secs_list = {}
 
-	time_in_secs = float(mins_to_secs(mins, secs))
-	print time_in_secs
+	for i in myList[i][3]:
+		time_list = i.split(":", 2)
+		mins = int(time_list[0])
+		secs = float(time_list[1])
+		time_in_secs = float(mins_to_secs(mins, secs))
+		time_secs_list = time_in_secs
+
+	return time_secs_list
 
 def mins_to_secs(mins, secs):
 
