@@ -19,7 +19,7 @@ def main():
 	# cursor.execute("CREATE TABLE place_course_name_here (race_name varchar(80));")
 
 	# create a RACE table
-	cursor.execute("CREATE TABLE complied_races (place int, year varchar(80), name varchar(80), time varchar(80), school varchar(80), race varchar(80), course varchar(80)), speed varchar(80);")
+	cursor.execute("CREATE TABLE complied_races (place int, year varchar(80), name varchar(80), time varchar(80), school varchar(80), race varchar(80), speed varchar(80);")
 
 	conn.commit()
 

@@ -29,8 +29,8 @@ def main():
 		course = parts[6]
 		speed = parts[7]
 
-		query =  "INSERT INTO compiled_races (place, year, name, time, school, race, course, speed) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
-		data = (place, year, name, time, school, race, course, speed)
+		query =  "INSERT INTO compiled_races (place, year, name, time, school, race, speed) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+		data = (place, year, name, time, school, race, speed)
 
 		cursor.execute(query, data)
 
