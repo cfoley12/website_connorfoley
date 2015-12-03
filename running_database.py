@@ -32,7 +32,7 @@ def get_courses():
 
     results = cursor.fetchall()
     # comment this out later
-    print results
+    # print results
     return results
 
 
@@ -104,6 +104,6 @@ def get_results(race):
     return results
 
 
-if __name__ == "__main__":
-    get_courses()
+#if __name__ == "__main__":
+    #get_courses()
 
