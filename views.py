@@ -1,5 +1,6 @@
 from flask import render_template, request
 from app import app
+from schedule_api import *
 from running_database import *
 
 @app.route('/')
@@ -14,7 +15,7 @@ def index():
 def about():
     options = {}
 
-    # options['terms'] = get_terms()
+    options['terms'] = get_terms()
 
     return render_template('about.html', **options)
 
@@ -25,22 +26,9 @@ def rankings():
     # get the courses, comment in to use
     options['courses'] = get_courses()
     # add in get_course function
-    translation = {
-        "mis": "Michigan International Speedway (MIS), Brooklyn, MI"
-        "willow": "Willow Metropark, New Boston, MI"
-        "portage": "Portage West MS, Portage, MI"
-        "spartan": "Forest Akers East Golf Course, East Lansing, MI"
-        "huron": "Huron Meadows Metropark, Brighton, MI"
-        "lake_erie": "Lake Erie Metropark, Brownstown, MI"
-        "nholly": "Springfield Oaks County Park, Davisburg, MI"
-        "ella": "Ella Sharp Park, Jackson, MI"
-        "bloomer": "Bloomer Park, Rochester Adams, MI"
-        "uncle": "Uncle John's Cider Mill, St. John's, MI"
-    }
+    #translation = {"mis": "Michigan International Speedway (MIS), Brooklyn, MI", "willow": "Willow Metropark, New Boston, MI", "portage": "Portage West MS, Portage, MI", "spartan": "Forest Akers East Golf Course, East Lansing, MI", "huron": "Huron Meadows Metropark, Brighton, MI", "lake_erie": "Lake Erie Metropark, Brownstown, MI", "nholly": "Springfield Oaks County Park, Davisburg, MI", "ella": "Ella Sharp Park, Jackson, MI", "bloomer": "Bloomer Park, Rochester Adams, MI", "uncle": "Uncle John's Cider Mill, St. John's, MI"}
 
-    for n in translation
-        results = get_courses()
-        print translation[n]
+    #print options
 
     return render_template('rankings.html', **options)
 

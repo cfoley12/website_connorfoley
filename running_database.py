@@ -14,14 +14,14 @@ def get_courses():
     conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
 
     # print the connection string we will use to connect
-    print "Connecting to database\n ->%s" % (conn_string)
+    # print "Connecting to database\n ->%s" % (conn_string)
 
     # get a connection, if a connect cannot be made an exception will be raised here
     conn = psycopg2.connect(conn_string)
 
     # conn.cursor will return a cursor object, you can use this cursor to perform queries
     cursor = conn.cursor()
-    print "Connected!\n"
+    # print "Connected!\n"
 
     # creating the query
     # query =  "SELECT compiled_races  FROM information_schema.tables WHERE table_schema='public' AND column_name='course'   AND table_type='BASE TABLE';"
@@ -48,14 +48,14 @@ def get_races(course):
     conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
     
     # print the connection string we will use to connect
-    # print "Connecting to database\n ->%s" % (conn_string)
+    print "Connecting to database\n ->%s" % (conn_string)
 
     # get a connection, if a connect cannot be made an exception will be raised here
     conn = psycopg2.connect(conn_string)
 
     # conn.cursor will return a cursor object, you can use this cursor to perform queries
     cursor = conn.cursor()
-    # print "Connected!\n"
+    print "Connected!\n"
 
     # creating the query
     # this will need to be fixed
