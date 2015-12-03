@@ -25,14 +25,14 @@ def get_courses():
 
     # creating the query
     # query =  "SELECT compiled_races  FROM information_schema.tables WHERE table_schema='public' AND column_name='course'   AND table_type='BASE TABLE';"
-    query =  "SELECT table_name FROM information_schema.columns WHERE column_name='course';"
+    query =  "SELECT table_name FROM information_schema.columns WHERE column_name='race_name';"
 
     cursor.execute(query,)
     conn.commit()
 
     results = cursor.fetchall()
     # comment this out later
-    # print results
+    print results
     return results
 
 
@@ -102,4 +102,8 @@ def get_results(race):
     # comment this out later
     # print results
     return results
+
+
+if __name__ == "__main__":
+    get_courses()
 
