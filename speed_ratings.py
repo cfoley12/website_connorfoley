@@ -104,7 +104,7 @@ def z_score_course(list1, mean_michigan_, std_dev_michigan_):
 
 def calc_speed_rating(z_score_course_, z_score_athlete_):
 
-	speed_rating = float(100 + (z_score_course_ * z_score_athlete_ * 12))
+	speed_rating = float(200 + (z_score_course_ * z_score_athlete_ * 52))
 	return speed_rating
 
 def speed_rating_loop(list1, z_score_course_):
@@ -117,11 +117,9 @@ def speed_rating_loop(list1, z_score_course_):
 
 	i = 0
 	for row in list1:
-		list1.append(row)
 		z_score_athlete_ = z_score_athlete(row[6], mean_course_, std_dev_course_)
 		speed_rating = float(calc_speed_rating(z_score_course_, z_score_athlete_))
 		print speed_rating
-		list1[i] = list(list1[i])
 		list1[i].append(speed_rating)
 		i = i + 1
 
@@ -479,12 +477,29 @@ if __name__ == "__main__":
 	mean_test = mean_of_list
 
 	z_score_mis = z_score_course(mis, mean_michigan, st_dev_michigan_)
-
-	print z_score_mis
+	z_score_huron_mp = z_score_course(huron_mp, mean_michigan, st_dev_michigan_)
+	z_score_willow_mp = z_score_course(willow_mp, mean_michigan, st_dev_michigan_)
+	z_score_portage_ms = z_score_course(portage_ms, mean_michigan, st_dev_michigan_)
+	z_score_forest_ak = z_score_course(forest_ak, mean_michigan, st_dev_michigan_)
+	z_score_spring_ok = z_score_course(spring_ok, mean_michigan, st_dev_michigan_)
+	z_score_ella_sp = z_score_course(ella_sp, mean_michigan, st_dev_michigan_)
+	z_score_bloom_pk = z_score_course(bloom_pk, mean_michigan, st_dev_michigan_)
+	z_score_uncle_cm = z_score_course(uncle_cm, mean_michigan, st_dev_michigan_)
+	z_score_lake_mp = z_score_course(lake_mp, mean_michigan, st_dev_michigan_)
 
 	speed_rating_loop(mis, z_score_mis)
+	speed_rating_loop(huron_mp, z_score_huron_mp)
+	speed_rating_loop(willow_mp, z_score_willow_mp)
+	speed_rating_loop(portage_ms, z_score_portage_ms)
+	speed_rating_loop(forest_ak, z_score_forest_ak)
+	speed_rating_loop(spring_ok, z_score_spring_ok)
+	speed_rating_loop(ella_sp, z_score_ella_sp)
+	speed_rating_loop(bloom_pk, z_score_bloom_pk)
+	speed_rating_loop(uncle_cm, z_score_uncle_cm)
+	speed_rating_loop(lake_mp, z_score_lake_mp)
+
 	
-	print mis
+	#print mis
 
 
 
