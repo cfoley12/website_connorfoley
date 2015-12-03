@@ -2,7 +2,6 @@ import numpy
 import psycopg2
 import sys
 import re
-import csv
 
 def mean():
 
@@ -105,7 +104,7 @@ def z_score_course(list1, mean_michigan_, std_dev_michigan_):
 
 def calc_speed_rating(z_score_course_, z_score_athlete_):
 
-	speed_rating = float(200 + (z_score_course_ * z_score_athlete_ * 52))
+	speed_rating = float(180 + ((z_score_course_ * 30)) + (-1 * (z_score_athlete_ * 30)))
 	return speed_rating
 
 def speed_rating_loop(list1, z_score_course_):
@@ -492,10 +491,409 @@ if __name__ == "__main__":
 	speed_rating_loop(uncle_cm, z_score_uncle_cm)
 	speed_rating_loop(lake_mp, z_score_lake_mp)
 
+	'''
+	_________________________________________________
+	'''
+	#MIS
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
 
+	# reading in from file
+	i = 0
+	for index in mis:
+		if i < len(mis):
+			place = str(mis[i][0])
+			year = str(mis[i][1])
+			name = str(mis[i][2])
+			time = str(mis[i][3])
+			school = str(mis[i][4])
+			race_name = str(mis[i][5])
+			speed_rating = str(mis[i][7])
 
+			query =  "INSERT INTO mis (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
 
+			cursor.execute(query, data)
 
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Huron Meadows
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in huron_mp:
+		if i < len(huron_mp):
+			place = str(huron_mp[i][0])
+			year = str(huron_mp[i][1])
+			name = str(huron_mp[i][2])
+			time = str(huron_mp[i][3])
+			school = str(huron_mp[i][4])
+			race_name = str(huron_mp[i][5])
+			speed_rating = str(huron_mp[i][7])
+
+			query =  "INSERT INTO huron (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Willow MetroPark
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in willow_mp:
+		if i < len(willow_mp):
+			place = str(willow_mp[i][0])
+			year = str(willow_mp[i][1])
+			name = str(willow_mp[i][2])
+			time = str(willow_mp[i][3])
+			school = str(willow_mp[i][4])
+			race_name = str(willow_mp[i][5])
+			speed_rating = str(willow_mp[i][7])
+
+			query =  "INSERT INTO willow (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Portage MS
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in portage_ms:
+		if i < len(portage_ms):
+			place = str(portage_ms[i][0])
+			year = str(portage_ms[i][1])
+			name = str(portage_ms[i][2])
+			time = str(portage_ms[i][3])
+			school = str(portage_ms[i][4])
+			race_name = str(portage_ms[i][5])
+			speed_rating = str(portage_ms[i][7])
+
+			query =  "INSERT INTO portage (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Forest Akers
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in forest_ak:
+		if i < len(forest_ak):
+			place = str(forest_ak[i][0])
+			year = str(forest_ak[i][1])
+			name = str(forest_ak[i][2])
+			time = str(forest_ak[i][3])
+			school = str(forest_ak[i][4])
+			race_name = str(forest_ak[i][5])
+			speed_rating = str(forest_ak[i][7])
+
+			query =  "INSERT INTO spartan (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Springfield Oaks
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in spring_ok:
+		if i < len(spring_ok):
+			place = str(spring_ok[i][0])
+			year = str(spring_ok[i][1])
+			name = str(spring_ok[i][2])
+			time = str(spring_ok[i][3])
+			school = str(spring_ok[i][4])
+			race_name = str(spring_ok[i][5])
+			speed_rating = str(spring_ok[i][7])
+
+			query =  "INSERT INTO nholly (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Ella Sharp Park
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in ella_sp:
+		if i < len(ella_sp):
+			place = str(ella_sp[i][0])
+			year = str(ella_sp[i][1])
+			name = str(ella_sp[i][2])
+			time = str(ella_sp[i][3])
+			school = str(ella_sp[i][4])
+			race_name = str(ella_sp[i][5])
+			speed_rating = str(ella_sp[i][7])
+
+			query =  "INSERT INTO ella (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Bloomer Park
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in bloom_pk:
+		if i < len(bloom_pk):
+			place = str(bloom_pk[i][0])
+			year = str(bloom_pk[i][1])
+			name = str(bloom_pk[i][2])
+			time = str(bloom_pk[i][3])
+			school = str(bloom_pk[i][4])
+			race_name = str(bloom_pk[i][5])
+			speed_rating = str(bloom_pk[i][7])
+
+			query =  "INSERT INTO bloomer (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Uncle John's Cider Mill
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in uncle_cm:
+		if i < len(uncle_cm):
+			place = str(uncle_cm[i][0])
+			year = str(uncle_cm[i][1])
+			name = str(uncle_cm[i][2])
+			time = str(uncle_cm[i][3])
+			school = str(uncle_cm[i][4])
+			race_name = str(uncle_cm[i][5])
+			speed_rating = str(uncle_cm[i][7])
+
+			query =  "INSERT INTO uncle (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
+	#Lake Erie MetroPark
+	#Define our connection string
+	conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
+ 
+	# print the connection string we will use to connect
+	print "Connecting to database\n	->%s" % (conn_string)
+ 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string)
+ 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	print "Connected!\n"
+
+	# reading in from file
+	i = 0
+	for index in lake_mp:
+		if i < len(lake_mp):
+			place = str(lake_mp[i][0])
+			year = str(lake_mp[i][1])
+			name = str(lake_mp[i][2])
+			time = str(lake_mp[i][3])
+			school = str(lake_mp[i][4])
+			race_name = str(lake_mp[i][5])
+			speed_rating = str(lake_mp[i][7])
+
+			query =  "INSERT INTO lake_erie (place, year, name, time, school, race_name, speed_rating) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+			data = (place, year, name, time, school, race_name, speed_rating)
+
+			cursor.execute(query, data)
+
+			print "Inserted: " + name
+			i = i + 1
+
+	conn.commit()
+	conn.close()
+
+	'''
+	_________________________________________________
+	'''
 
 
 
