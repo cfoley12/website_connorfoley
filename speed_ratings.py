@@ -2,6 +2,7 @@ import numpy
 import psycopg2
 import sys
 import re
+import csv
 
 def mean():
 
@@ -119,7 +120,6 @@ def speed_rating_loop(list1, z_score_course_):
 	for row in list1:
 		z_score_athlete_ = z_score_athlete(row[6], mean_course_, std_dev_course_)
 		speed_rating = float(calc_speed_rating(z_score_course_, z_score_athlete_))
-		print speed_rating
 		list1[i].append(speed_rating)
 		i = i + 1
 
@@ -463,16 +463,10 @@ if __name__ == "__main__":
 	'''
 
 	mean_michigan = mean_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
-	
-	print mean_michigan
-	
+		
 	st_dev_michigan_ = st_dev_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
 
-	print st_dev_michigan_
-
 	mis_std_dev = std_dev_course(mis)
-
-	print mis_std_dev
 
 	mean_test = mean_of_list
 
@@ -497,10 +491,6 @@ if __name__ == "__main__":
 	speed_rating_loop(bloom_pk, z_score_bloom_pk)
 	speed_rating_loop(uncle_cm, z_score_uncle_cm)
 	speed_rating_loop(lake_mp, z_score_lake_mp)
-
-	
-	#print mis
-
 
 
 
