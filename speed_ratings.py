@@ -50,11 +50,11 @@ def st_dev_michigan(myList1, myList2, myList3, myList4,
 	sigma_value = (float(((mean1 - mean_temp)**2) + ((mean2 - mean_temp)**2) + ((mean3 - mean_temp)**2) + ((mean4 - mean_temp)**2) + ((mean5 - mean_temp)**2) + 
 		((mean6 - mean_temp)**2) + ((mean7 - mean_temp)**2) + ((mean8 - mean_temp)**2) + ((mean9 - mean_temp)**2) + ((mean10 - mean_temp)**2)))
 	
-	st_dev_michigan = float((sigma_value/10)**0.5)
+	st_dev_michigan_ = float((sigma_value/10)**0.5)
 
 	#st_dev_michigan = float(numpy.std(mean_list))
 
-	return st_dev_michigan
+	return st_dev_michigan_
 
 def mean_michigan(myList1, myList2, myList3, myList4, 
 	myList5, myList6, myList7, myList8, myList9, myList10):
@@ -70,9 +70,9 @@ def mean_michigan(myList1, myList2, myList3, myList4,
 	mean9 = float(mean_of_list(myList9))
 	mean10 = float(mean_of_list(myList10))
 	
-	mean_michigan = float((mean1 + mean2 + mean3 + mean4 + mean5 + mean6 + mean7 + mean8 + mean9 + mean10)/ 10)
+	mean_michigan_ = float((mean1 + mean2 + mean3 + mean4 + mean5 + mean6 + mean7 + mean8 + mean9 + mean10)/ 10)
 
-	return mean_michigan
+	return mean_michigan_
 
 def mean_of_list(myList):
 	
@@ -88,22 +88,42 @@ def std_dev_course(myList):
 	std_dev_course = float(numpy.std(zip(*myList)[6]))
 	return std_dev_course
 
-def z_score_athlete(time_in_secs, mean_course, std_dev_course):
+def z_score_athlete(time_in_secs, mean_course_, std_dev_course_):
 
-	z_score_athlete = float((time_in_secs - mean_course) / (std_dev_course))
+	z_score_athlete_ = (time_in_secs - mean_course_) / (std_dev_course_)
 
-	return z_score_athlete
+	return z_score_athlete_
 
-def z_score_course(mean_course, mean_michigan, std_dev_michigan):
+def z_score_course(list1, mean_michigan_, std_dev_michigan_):
 
-	z_score_course = float((mean_course - mean_michigan) / (std_dev_michigan))
+	mean_course = mean_of_list(list1)
+
+	z_score_course = float((mean_course - mean_michigan_) / (std_dev_michigan_))
 
 	return z_score_course
 
-def calc_speed_rating(z_score_michigan, z_score_course):
+def calc_speed_rating(z_score_course_, z_score_athlete_):
 
-	speed_rating = float(100 + (z_score_michigan * z_score_course * 12))
+	speed_rating = float(100 + (z_score_course_ * z_score_athlete_ * 12))
 	return speed_rating
+
+def speed_rating_loop(list1, z_score_course_):
+
+	mean_course_ = 0.0
+	std_dev_course_ = 0.0
+
+	mean_course_ = mean_of_list(list1)
+	std_dev_course_ = std_dev_course(list1)
+
+	i = 0
+	for row in list1:
+		list1.append(row)
+		z_score_athlete_ = z_score_athlete(row[6], mean_course_, std_dev_course_)
+		speed_rating = float(calc_speed_rating(z_score_course_, z_score_athlete_))
+		print speed_rating
+		list1[i] = list(list1[i])
+		list1[i].append(speed_rating)
+		i = i + 1
 
 if __name__ == "__main__":
 	
@@ -448,13 +468,25 @@ if __name__ == "__main__":
 	
 	print mean_michigan
 	
-	st_dev_michigan = st_dev_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
+	st_dev_michigan_ = st_dev_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
 
-	print st_dev_michigan
+	print st_dev_michigan_
 
 	mis_std_dev = std_dev_course(mis)
 
 	print mis_std_dev
+
+	mean_test = mean_of_list
+
+	z_score_mis = z_score_course(mis, mean_michigan, st_dev_michigan_)
+
+	print z_score_mis
+
+	speed_rating_loop(mis, z_score_mis)
+	
+	print mis
+
+
 
 
 
