@@ -25,7 +25,7 @@ def rankings():
     # get the courses, comment in to use
     options['courses'] = get_courses()
     # add in get_course function
-    var translation = {
+    translation = {
         "mis": "Michigan International Speedway (MIS), Brooklyn, MI"
         "willow": "Willow Metropark, New Boston, MI"
         "portage": "Portage West MS, Portage, MI"
@@ -38,7 +38,9 @@ def rankings():
         "uncle": "Uncle John's Cider Mill, St. John's, MI"
     }
 
-    translation[get_courses]
+    for n in translation
+        results = get_courses()
+        print translation[n]
 
     return render_template('rankings.html', **options)
 
