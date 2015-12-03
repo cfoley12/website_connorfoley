@@ -24,7 +24,7 @@ def rankings():
     options = {}
 
     # get the courses, comment in to use
-    # options['courses'] = get_courses()
+    options['courses'] = get_courses()
     # add in get_course function
 
     return render_template('rankings.html', **options)
