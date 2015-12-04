@@ -39,7 +39,7 @@ def get_courses():
 # you'll need a function that gets a list of races from the database provided a course name,
 # which will look similar but the main difference is that the "query" will be different.
 
-def get_races(course):
+def get_races():
     ''' 
     Return the PostgresSQL data for all of the
     valid courses.
@@ -55,19 +55,33 @@ def get_races(course):
 
     # conn.cursor will return a cursor object, you can use this cursor to perform queries
     cursor = conn.cursor()
-    print "Connected!\n"
+    #print "Connected!\n"
 
-    # creating the query
+    # creating the query WHERE column_name='race_name';"
     # this will need to be fixed
-    query =  "SELECT table_name FROM information_schema.columns WHERE column_name='race';"
+    query =  "SELECT * FROM mis"
 
     cursor.execute(query,)
     conn.commit()
 
+    #This puts all MIS results into a tuple of lists
     results = cursor.fetchall()
-    # comment this out later
-    # print results
-    return results
+    # transposes list
+    results = list(map(list, zip(*results)))
+    # pulls out all of race names of the lists
+    for n in results:
+        results = list(results)
+        races = []
+        races.append(results[5])
+
+    # races is now a list of all of the names of the races at the course in one list
+    races = races[0]
+    # races is now a list of the names of the races
+    for n in races:
+        
+
+    print races
+    return races
 
 
 # you'll also need a function that gets race results for a given race, same as before,
@@ -105,5 +119,5 @@ def get_results(race):
 
 
 #if __name__ == "__main__":
-    #get_courses()
+    #get_races()
 
