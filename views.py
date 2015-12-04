@@ -33,22 +33,27 @@ def rankings():
     return render_template('rankings.html', **options)
 
 @app.route('/races/<course_name>')
-def races():
+def races(course_name):
     options = {}
 
     # get the races, comment in to use
-    # options['races'] = get_races(course_name)
+    options['races'] = get_races(course_name)
+    options['course_name'] = course_name
     # add in get_race function
+
+    print options
 
     return render_template('races.html', **options)
 
 @app.route('/results/<race_name>/')
-def results():
+def results(race_name):
     options = {}
-
+    course_name = request.args['course']
     # get the results, comment in to use
-    # options['results'] = get_results(race_name)
+    options['results'] = get_results(race_name, course_name)
     # add in get_results function
-
+    print options['results']
     return render_template('results.html', **options)
 	
+
+
