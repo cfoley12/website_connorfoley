@@ -4,14 +4,30 @@
 
 <link type="text/css" rel="stylesheet" href="static/stylesheet.css" />
 
-<!--<div>
+<div>
     <h2>Results:</h2>
-    {% for term in terms %}
-        {{ term['TermDescr'] }}<br>
+    <table border=1>
+    <tr>
+    <td> Place </td>
+    <td> Year </td>
+    <td> Name </td>
+    <td> Time </td>
+    <td> School </td>
+    <td> Speed Rating </td>
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td> {{ result[0] }} </td>
+        <td> {{ result[1] }} </td>
+        <td> {{ result[2] }} </td>
+        <td> {{ result[3] }} </td>
+        <td> {{ result[4] }} </td>
+        <td> {{ result[6] }} </td>
+    </tr>
     {% endfor %}
 </div>
 
-	# This bit will be used if translation needed
+<!-- 	# This bit will be used if translation needed
 	# The first bit is the name of the table
 	var translation = {
 		"mis": "Michigan International Speedway"
@@ -20,6 +36,6 @@
 		"spartan": "Forest Akers East Golf Course"
 	}
 
-	translation[race_abbrev]-->
+	translation[race_abbrev] -->
 
 {% endblock %}

@@ -52,8 +52,10 @@ def main():
 	'''
 	make sure to set the number of entrants before running the program
 	'''
+	
 	total = []
 	i = 0
+
 	'''
 	for row in cursor.fetchall():
 		total.append(row)
@@ -63,11 +65,12 @@ def main():
 		i = i +1
 	'''
 	for row in cursor.fetchall():
-		total.append(row)
-		temp = splitter(row[3])
-		total[i] = list(total[i])
-		total[i].append(temp)
-		i = i + 1
+		#total.append(row)
+		#temp = splitter(row[3])
+		#total[i] = list(total[i])
+		#total[i].append(temp)
+		#i = i + 1
+		print row[3]
 		
 		
 
@@ -76,8 +79,7 @@ def main():
 
 	conn.close()
 
-	print mean_of_list(total)
-	print std_dev_course(total)
+	#print total
 
 
 

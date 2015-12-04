@@ -4,14 +4,15 @@
 
 <link type="text/css" rel="stylesheet" href="static/stylesheet.css" />
 
-<!--<div>
-    <h2>The courses with the speed ratings are:</h2>
+<div>
+    <h4>The courses with the speed ratings are:</h4>
     {% for course in courses %}
-        {{ course['CourseDescp'] }}<br>
+    	<a href="/races/{{ course }}">{{ course }}</a> <br>
+        <!-- {{ course }}<br> -->
     {% endfor %}
 </div>
 
-	# This bit will be used if translation needed
+	<!--# This bit will be used if translation needed
 	# The first bit is the name of the table
 	var translation = {
 		"mis": "Michigan International Speedway (MIS), Brooklyn, MI"
@@ -26,6 +27,6 @@
 		"uncle": "Uncle John's Cider Mill, St. John's, MI"
 	}
 
-	translation[race_abbrev]-->
+	translation[get_courses]-->
 
 {% endblock %}

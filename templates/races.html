@@ -4,12 +4,12 @@
 
 <link type="text/css" rel="stylesheet" href="static/stylesheet.css" />
 
-<!--<div>
+<div>
     <h2>Please choose a race:</h2>
-    {% for term in terms %}
-        {{ term['TermDescr'] }}<br>
+    {% for race in races %}
+        <a href="/results/{{ race }}?course={{ course_name }}">{{ race }}</a> <br>
     {% endfor %}
-</div>
+<!--</div>
 
 	This bit will be used if translation needed
 	var translation = {
