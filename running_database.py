@@ -106,6 +106,8 @@ def get_results():
     # print "Connected!\n"
 
     # creating the query
+    # make if statements that allow an input to a function
+        # each input should allow for a different "query =" statements with different table names
     # this will need to be fixed
     query =  "SELECT * FROM mis"
 
@@ -113,9 +115,14 @@ def get_results():
     conn.commit()
 
     results = cursor.fetchall()
+    # makes it a list within a list instead of a tuple within a tuple
+    results = list(map(list, zip(*results)))
+    results = list(map(list, zip(*results)))
 
+    # now we just need to figure out a way to only print the values of a specific race...
+    
     # comment this out later
-    print results
+    # print results
     return results
 
 
