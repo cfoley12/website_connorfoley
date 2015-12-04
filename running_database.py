@@ -57,7 +57,9 @@ def get_races(course):
     cursor = conn.cursor()
     #print "Connected!\n"
 
-    # creating the query WHERE column_name='race_name';"
+    # creating the query
+    # make if statements that allow an input to a function
+        # each input should allow for a different "query =" statements with different table names
     # this will need to be fixed
     query =  "SELECT * FROM mis"
 
@@ -85,7 +87,7 @@ def get_races(course):
 # you'll also need a function that gets race results for a given race, same as before,
 # its just changing the query.
 
-def get_results(race):
+def get_results():
     ''' 
     Return the PostgresSQL data for all of the
     valid courses.
@@ -94,28 +96,29 @@ def get_results(race):
     conn_string = "host='pellefant-01.db.elephantsql.com' dbname='rphkcioy' user='rphkcioy' password='tlFXsKFJHBOewOTyKvadX-CMbQnCOm0j'"
 
     # print the connection string we will use to connect
-    print "Connecting to database\n ->%s" % (conn_string)
+    # print "Connecting to database\n ->%s" % (conn_string)
 
     # get a connection, if a connect cannot be made an exception will be raised here
     conn = psycopg2.connect(conn_string)
 
     # conn.cursor will return a cursor object, you can use this cursor to perform queries
     cursor = conn.cursor()
-    print "Connected!\n"
+    # print "Connected!\n"
 
     # creating the query
     # this will need to be fixed
-    query =  "SELECT table_name FROM information_schema.columns WHERE column_name='race';"
+    query =  "SELECT * FROM mis"
 
     cursor.execute(query,)
     conn.commit()
 
     results = cursor.fetchall()
+
     # comment this out later
-    # print results
+    print results
     return results
 
 
-#if __name__ == "__main__":
-    #get_races()
+if __name__ == "__main__":
+    get_results()
 
