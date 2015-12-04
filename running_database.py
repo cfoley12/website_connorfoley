@@ -39,7 +39,7 @@ def get_courses():
 # you'll need a function that gets a list of races from the database provided a course name,
 # which will look similar but the main difference is that the "query" will be different.
 
-def get_races():
+def get_races(course):
     ''' 
     Return the PostgresSQL data for all of the
     valid courses.
@@ -77,8 +77,6 @@ def get_races():
     # races is now a list of all of the names of the races at the course in one list
     races = races[0]
     # races is now a list of the names of the races
-    for n in races:
-        
 
     print races
     return races
