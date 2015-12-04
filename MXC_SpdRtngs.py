@@ -51,6 +51,7 @@ myList5, myList6, myList7, myList8, myList9, myList10):
 		((mean6 - mean_temp)**2) + ((mean7 - mean_temp)**2) + ((mean8 - mean_temp)**2) + ((mean9 - mean_temp)**2) + ((mean10 - mean_temp)**2)))
 	
 	st_dev_michigan = float((sigma_value/10)**0.5)
+	return st_dev_michigan
 
 def mean_michigan(myList1, myList2, myList3, myList4, 
 myList5, myList6, myList7, myList8, myList9, myList10):
@@ -434,9 +435,12 @@ for row in cursor.fetchall():
 	i = i + 1
 	
 conn.close()
+
 '''
 _________________________________________________
 '''
+
+
 
 
 
@@ -447,5 +451,21 @@ _________________________________________________
 if __name__ == "__main__":
 	#main()
 
-	meanMichigan = mean_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
-	print meanMichigan
+	#meanMichigan = mean_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
+	#print meanMichigan
+	#print st_dev_michigan(mis, huron_mp, willow_mp, portage_ms, forest_ak, spring_ok, ella_sp, bloom_pk, uncle_cm, lake_mp)
+	count = 0
+	i = 0
+	for index in mis:
+		j = 0
+		if i < len(mis):
+			for index in mis[i]:
+				print mis[i][j]
+				count = count + 1
+				j = j+1
+
+
+
+		i = i + 1
+
+	print count

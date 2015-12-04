@@ -104,7 +104,7 @@ def z_score_course(list1, mean_michigan_, std_dev_michigan_):
 
 def calc_speed_rating(z_score_course_, z_score_athlete_):
 
-	speed_rating = float(180 + ((z_score_course_ * 30)) + (-1 * (z_score_athlete_ * 30)))
+	speed_rating = float(50 + (-1 *(z_score_course_ * 3)) + (-1 * (z_score_athlete_ * 30)))
 	return speed_rating
 
 def speed_rating_loop(list1, z_score_course_):
@@ -491,8 +491,12 @@ if __name__ == "__main__":
 	speed_rating_loop(uncle_cm, z_score_uncle_cm)
 	speed_rating_loop(lake_mp, z_score_lake_mp)
 
+	print mis
+
 	'''
-	_________________________________________________
+
+	'''
+	#_________________________________________________
 	'''
 	#MIS
 	#Define our connection string
@@ -532,7 +536,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Huron Meadows
 	#Define our connection string
@@ -572,7 +576,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Willow MetroPark
 	#Define our connection string
@@ -612,7 +616,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Portage MS
 	#Define our connection string
@@ -652,7 +656,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Forest Akers
 	#Define our connection string
@@ -692,7 +696,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Springfield Oaks
 	#Define our connection string
@@ -732,7 +736,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Ella Sharp Park
 	#Define our connection string
@@ -772,7 +776,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Bloomer Park
 	#Define our connection string
@@ -812,7 +816,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Uncle John's Cider Mill
 	#Define our connection string
@@ -852,7 +856,7 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
 	'''
 	#Lake Erie MetroPark
 	#Define our connection string
@@ -892,7 +896,8 @@ if __name__ == "__main__":
 	conn.close()
 
 	'''
-	_________________________________________________
+	#_________________________________________________
+	'''
 	'''
 
 
