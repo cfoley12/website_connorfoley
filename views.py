@@ -28,7 +28,7 @@ def rankings():
     # add in get_course function
     #translation = {"mis": "Michigan International Speedway (MIS), Brooklyn, MI", "willow": "Willow Metropark, New Boston, MI", "portage": "Portage West MS, Portage, MI", "spartan": "Forest Akers East Golf Course, East Lansing, MI", "huron": "Huron Meadows Metropark, Brighton, MI", "lake_erie": "Lake Erie Metropark, Brownstown, MI", "nholly": "Springfield Oaks County Park, Davisburg, MI", "ella": "Ella Sharp Park, Jackson, MI", "bloomer": "Bloomer Park, Rochester Adams, MI", "uncle": "Uncle John's Cider Mill, St. John's, MI"}
 
-    #print options
+    print options
 
     return render_template('rankings.html', **options)
 
