@@ -94,10 +94,25 @@ def z_score_course(mean_course, mean_michigan, std_dev_michigan):
 
 	return z_score_course
 
-def calc_speed_rating(z_score_michigan, z_score_course):
+def calc_speed_rating(z_score_course, z_score_athlete):
 
 	speed_rating = float(100 + (z_score_michigan * z_score_course * 12))
 	return speed_rating
+
+def speed_rating_loop(list1, z_score_michigan):
+
+	mean_course = mean_of_list(list1)
+	std_dev_course = std_dev_course(list1)
+
+	i = 0
+	for row in list1
+		list1.append(row)
+		z_score_athlete = z_score_athlete(row[6], mean_course, std_dev_course)
+		speed_rating = calc_speed_rating(z_score_course, z_score_athlete)
+		list1[i] = list(list1[i])
+		list1[i].append(speed_rating)
+		i = i + 1
+
 
 if __name__ == "__main__":
 	
@@ -112,6 +127,9 @@ if __name__ == "__main__":
 	[0, 0, 0, 0, 0, 0, 5]
 	]
 	
+
+
+
 	mean = mean_of_list(test_list)
 
 	print mean

@@ -52,3 +52,15 @@ tr:nth-child(even){background-color: #f2f2f2}
 tr.results {
 	background-color: #3da0b8;
 }
+
+div.fixed {
+	position: fixed;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.padding {
+	padding-top: 125px;
+}

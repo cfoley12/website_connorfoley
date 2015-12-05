@@ -145,97 +145,97 @@ def get_results(race_name, course_name):
         db_race_name = "river_rat_sub20"
     if race_name == "River Rat Open Over 20 Minutes":
         db_race_name = "river_rat_over20"
-    if race_name == "Adams/Cicciarelli Invitational Varsity"
+    if race_name == "Adams/Cicciarelli Invitational Varsity":
         db_race_name = "Adams_Cic_Invite 2"
-    if race_name == "Adams/Cicciarelli Invitational Varsity"
+    if race_name == "Adams/Cicciarelli Invitational Varsity":
         db_race_name = "Adams_Cic_Invite"
-    if race_name == "OAA Red Jamboree #1 Varsity"
+    if race_name == "OAA Red Jamboree #1 Varsity":
         db_race_name = "Red_Jamb1"
-    if race_name == "OAA - Red Championships Varsity"
+    if race_name == "OAA - Red Championships Varsity":
         db_race_name = "Red_Champs"
-    if race_name == "OAA - Red Championships JV"
+    if race_name == "OAA - Red Championships JV":
         db_race_name = "Red_ChampsJV"
-    if race_name == "OAA White Jamboree #2 Varsity"
+    if race_name == "OAA White Jamboree #2 Varsity":
         db_race_name = "White_Jamb" 
-    if race_name == "MHSAA Regional 25-3"
+    if race_name == "MHSAA Regional 25-3":
         db_race_name = "Reg_25-3"
-    if race_name == "MHSAA Regional 33-4"
+    if race_name == "MHSAA Regional 33-4":
         db_race_name = "Reg_33-4"    
-    if race_name == "Jackson HS Invite Division 1"
+    if race_name == "Jackson HS Invite Division 1":
         db_race_name = "JacksonInviteD1"
-    if race_name == "Jackson HS Invite Division 2"
+    if race_name == "Jackson HS Invite Division 2":
         db_race_name = "JacksonInviteD2"
-    if race_name == "Jackson HS Invite Division 3 & 4"
+    if race_name == "Jackson HS Invite Division 3 & 4":
         db_race_name = "JacksonInviteD3-4"
-    if race_name == "Warrior Classic Varsity"
+    if race_name == "Warrior Classic Varsity":
         db_race_name = "WarriorClassic"
-    if race_name == "MHSAA Regional 05-1"
+    if race_name == "MHSAA Regional 05-1":
         db_race_name = "Reg_5-1"
-    if race_name == "MHSAA Regional 18-2"
+    if race_name == "MHSAA Regional 18-2":
         db_race_name = "Reg_18-2"        
-    if race_name == "Marauder Invitational"
+    if race_name == "Marauder Invitational":
         db_race_name = "Marauder_Invitational"
-    if race_name == "MHSAA Regional 27-3"
+    if race_name == "MHSAA Regional 27-3":
         db_race_name = "Reg_27-3"
-    if race_name == "Division 1 Championships"
+    if race_name == "Division 1 Championships":
         db_race_name = "D1"
-    if race_name == "Division 2 Championships"
+    if race_name == "Division 2 Championships":
         db_race_name = "D2"
-    if race_name == "Division 3 Championships"
+    if race_name == "Division 3 Championships":
         db_race_name = "D3"
-    if race_name == "Division 4 Championships"
+    if race_name == "Division 4 Championships":
         db_race_name = "D4"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 1"
+    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 1":
         db_race_name = "NHolly D1"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 2"
+    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 2":
         db_race_name = "NHolly D2"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 3"
+    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 3":
         db_race_name = "NHolly D3"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 4"
+    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 4":
         db_race_name = "NHolly D4"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 5"
+    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 5":
         db_race_name = "NHolly D5"
-    if race_name == "Portage Invite Division 1 Varsity"
+    if race_name == "Portage Invite Division 1 Varsity":
         db_race_name = "VarD1"
-    if race_name == "Portage Invite Division 2 Varsity"
+    if race_name == "Portage Invite Division 2 Varsity":
         db_race_name = "VarD2"
-    if race_name == "Portage Invite Division 2 JV"
+    if race_name == "Portage Invite Division 2 JV":
         db_race_name = "JVD2"
-    if race_name == "Portage Invite Division 4 Varsity"
+    if race_name == "Portage Invite Division 4 Varsity":
         db_race_name = "VarD4"
-    if race_name == "Portage Invite Division 3 Varsity"
+    if race_name == "Portage Invite Division 3 Varsity":
         db_race_name = "VarD3"
-    if race_name == "MSU Spartan Invitational Elite Race"
+    if race_name == "MSU Spartan Invitational Elite Race":
         db_race_name = "Spartan Elite"
-    if race_name == "MSU Spartan Invitational Green Race (D1 & D2)"
+    if race_name == "MSU Spartan Invitational Green Race (D1 & D2)":
         db_race_name = "Spartan D12"
-    if race_name == "MSU Spartan Invitational Bronze Race (D2 & D3)"
+    if race_name == "MSU Spartan Invitational Bronze Race (D2 & D3)":
         db_race_name = "Spartan D23"
-    if race_name == "MSU Spartan Invitational White Race (D3 & D4)"
+    if race_name == "MSU Spartan Invitational White Race (D3 & D4)":
         db_race_name = "Spartann D34"
-    if race_name == "MSU Spartan Invitational JV #1"
+    if race_name == "MSU Spartan Invitational JV #1":
         db_race_name = "Spartan JV1"
-    if race_name == "Fowler Cider Mill Invite Varsity and JV"
+    if race_name == "Fowler Cider Mill Invite Varsity and JV":
         db_race_name = "FolwerCiderMill"
-    if race_name == "TVC Central Jamboree #2 Varsity and JV"
+    if race_name == "TVC Central Jamboree #2 Varsity and JV":
         db_race_name = "TVCCentralJamb"
-    if race_name == "Marauder Invite Large Schools"
+    if race_name == "Marauder Invite Large Schools":
         db_race_name = "MarauderInvite"
-    if race_name == "MHSAA Regional 14-2"
+    if race_name == "MHSAA Regional 14-2":
         db_race_name = "Reg_14-2"
-    if race_name == "MHSAA Regional 23-3"
+    if race_name == "MHSAA Regional 23-3":
         db_race_name = "Reg_23-3"
-    if race_name == "MHSAA Regional 06-1"
+    if race_name == "MHSAA Regional 06-1":
         db_race_name = "06_1_regionals"
-    if race_name == "MHSAA Regional 36-4"
+    if race_name == "MHSAA Regional 36-4":
         db_race_name = "36_4_regionals"
-    if race_name == "Wayne County Championship JV"
+    if race_name == "Wayne County Championship JV":
         db_race_name = "wayne_co_jv"
-    if race_name == "Wayne County Championship Varsity"
+    if race_name == "Wayne County Championship Varsity":
         db_race_name = "wayne_co_varsity"
-    if race_name == "Ramblin Rock Invitational Varsity"
+    if race_name == "Ramblin Rock Invitational Varsity":
         db_race_name = "ramblin_rock_varsity"
-    if race_name == "Ramblin Rock Invitational JV"
+    if race_name == "Ramblin Rock Invitational JV":
         db_race_name = "ramblin_rock_jv"
 
 

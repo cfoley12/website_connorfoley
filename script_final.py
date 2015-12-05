@@ -17,7 +17,7 @@ def main():
 	print "Connected!\n"
 
 	# reading in from file
-	for line in open("compiled.txt", 'r'):
+	for line in open("ella_park_fixed.txt", 'r'):
 		parts = re.split(r'\t+', line)
 		# print parts
 		place = int(parts[0])
@@ -29,7 +29,7 @@ def main():
 		course = parts[6]
 		speed = parts[7]
 
-		query =  "INSERT INTO compiled_races (place, year, name, time, school, race, speed) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+		query =  "INSERT INTO ella (place, year, name, time, school, race, speed) VALUES (%s, %s, %s, %s, %s, %s, %s);"
 		data = (place, year, name, time, school, race, speed)
 
 		cursor.execute(query, data)
