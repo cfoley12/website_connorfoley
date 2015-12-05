@@ -57,8 +57,10 @@ div.fixed {
 	position: fixed;
 	right: 0;
 	left: 0;
+	padding-top: 0;
 	margin-right: auto;
 	margin-left: auto;
+	background-color: #FFFFCC
 }
 
 div.padding {
