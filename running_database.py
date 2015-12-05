@@ -75,7 +75,7 @@ def get_races(course):
     if course == 'lake_erie':
         query = "SELECT * FROM Lake_Erie_Metro_Park"
     if course == 'nholly':
-        query = "SELECT * FROM Springfield_Oaks_Metro_Park"
+        query = "SELECT * FROM Springfield_Oaks_county_Park"
     if course == 'ella':
         query = "SELECT * FROM Ella_Sharp_Park"
     if course == 'bloomer':
@@ -87,7 +87,7 @@ def get_races(course):
     if course == 'mis':
         query = "SELECT * FROM Michigan_International_Speedway"
     if course == 'willow':
-        query = "SELECT * FROM Willow_Metro_Park"
+        query = "SELECT * FROM Willow_Metropark"
     if course == 'spartan':
         query = "SELECT * FROM Forest_Akers_East_Golf_Course"
 
