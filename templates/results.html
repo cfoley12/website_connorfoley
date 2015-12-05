@@ -2,29 +2,30 @@
 
 {% block content %}
 
-<link type="text/css" rel="stylesheet" href="static/stylesheet.css" />
+<link type="text/css" rel="stylesheet" href="/static/stylesheet.css" />
 
 <div>
     <h2>Results:</h2>
     <table border=1>
-    <tr>
-    <td> Place </td>
-    <td> Year </td>
-    <td> Name </td>
-    <td> Time </td>
-    <td> School </td>
-    <td> Speed Rating </td>
-    </tr>
+    	<tr>
+    		<td> Place </td>
+    		<td> Year </td>
+    		<td> Name </td>
+    		<td> Time </td>
+    		<td> School </td>
+    		<td> Speed Rating </td>
+    	</tr>
     {% for result in results %}
-    <tr>
-        <td> {{ result[0] }} </td>
-        <td> {{ result[1] }} </td>
-        <td> {{ result[2] }} </td>
-        <td> {{ result[3] }} </td>
-        <td> {{ result[4] }} </td>
-        <td> {{ result[6] }} </td>
-    </tr>
+    	<tr>
+        	<td> {{ result[0] }} </td>
+        	<td> {{ result[1] }} </td>
+        	<td> {{ result[2] }} </td>
+        	<td> {{ result[3] }} </td>
+        	<td> {{ result[4] }} </td>
+        	<td> {{ result[6] }} </td>
+    	</tr>
     {% endfor %}
+    </table>
 </div>
 
 <!-- 	# This bit will be used if translation needed
