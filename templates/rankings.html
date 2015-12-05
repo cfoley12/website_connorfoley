@@ -5,10 +5,9 @@
 <link type="text/css" rel="stylesheet" href="/static/stylesheet.css" />
 
 <div class="padding">
-    <h4>The courses with the speed ratings are:</h4>
+    <h2>The courses with the speed ratings are:</h2>
     {% for course in courses %}
     	<a href="/races/{{ course }}">{{ course }}</a> <br>
-        <!-- {{ course }}<br> -->
     {% endfor %}
 </div>
 
