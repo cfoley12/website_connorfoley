@@ -212,7 +212,7 @@ def get_results(race_name, course_name):
     if race_name == "MSU Spartan Invitational Bronze Race (D2 & D3)":
         db_race_name = "Spartan D23"
     if race_name == "MSU Spartan Invitational White Race (D3 & D4)":
-        db_race_name = "Spartann D34"
+        db_race_name = "Spartan D34"
     if race_name == "MSU Spartan Invitational JV #1":
         db_race_name = "Spartan JV1"
     if race_name == "Fowler Cider Mill Invite Varsity and JV":
