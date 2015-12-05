@@ -145,17 +145,17 @@ def get_results(race_name, course_name):
         db_race_name = "river_rat_sub20"
     if race_name == "River Rat Open Over 20 Minutes":
         db_race_name = "river_rat_over20"
-    if race_name == "Adams/Cicciarelli Invitational Varsity":
+    if race_name == "Adams-Cicciarelli Invitational Varsity":
         db_race_name = "Adams_Cic_Invite 2"
-    if race_name == "Adams/Cicciarelli Invitational Varsity":
+    if race_name == "Adams-Cicciarelli Invitational Varsity":
         db_race_name = "Adams_Cic_Invite"
-    if race_name == "OAA Red Jamboree #1 Varsity":
+    if race_name == "OAA Red Jamboree 1 Varsity":
         db_race_name = "Red_Jamb1"
     if race_name == "OAA - Red Championships Varsity":
         db_race_name = "Red_Champs"
     if race_name == "OAA - Red Championships JV":
         db_race_name = "Red_ChampsJV"
-    if race_name == "OAA White Jamboree #2 Varsity":
+    if race_name == "OAA White Jamboree 2 Varsity":
         db_race_name = "White_Jamb" 
     if race_name == "MHSAA Regional 25-3":
         db_race_name = "Reg_25-3"
@@ -185,15 +185,15 @@ def get_results(race_name, course_name):
         db_race_name = "D3"
     if race_name == "Division 4 Championships":
         db_race_name = "D4"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 1":
+    if race_name == "Nike-Holly-Duane Raffin Festival of Races Division 1":
         db_race_name = "NHolly D1"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 2":
+    if race_name == "Nike-Holly-Duane Raffin Festival of Races Division 2":
         db_race_name = "NHolly D2"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 3":
+    if race_name == "Nike-Holly-Duane Raffin Festival of Races Division 3":
         db_race_name = "NHolly D3"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 4":
+    if race_name == "Nike-Holly-Duane Raffin Festival of Races Division 4":
         db_race_name = "NHolly D4"
-    if race_name == "Nike/Holly/Duane Raffin Festival of Races Division 5":
+    if race_name == "Nike-Holly-Duane Raffin Festival of Races Division 5":
         db_race_name = "NHolly D5"
     if race_name == "Portage Invite Division 1 Varsity":
         db_race_name = "VarD1"
@@ -213,11 +213,11 @@ def get_results(race_name, course_name):
         db_race_name = "Spartan D23"
     if race_name == "MSU Spartan Invitational White Race (D3 & D4)":
         db_race_name = "Spartan D34"
-    if race_name == "MSU Spartan Invitational JV #1":
+    if race_name == "MSU Spartan Invitational JV 1":
         db_race_name = "Spartan JV1"
     if race_name == "Fowler Cider Mill Invite Varsity and JV":
         db_race_name = "FolwerCiderMill"
-    if race_name == "TVC Central Jamboree #2 Varsity and JV":
+    if race_name == "TVC Central Jamboree 2 Varsity and JV":
         db_race_name = "TVCCentralJamb"
     if race_name == "Marauder Invite Large Schools":
         db_race_name = "MarauderInvite"
