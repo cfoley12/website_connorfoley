@@ -46,3 +46,9 @@ td.nav {
 	border-radius: 50px;
 	padding: 5px;
 }
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+tr.results {
+	background-color: #3da0b8;
+}
