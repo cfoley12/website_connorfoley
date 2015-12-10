@@ -4,10 +4,11 @@
 
 <link type="text/css" rel="stylesheet" href="/static/stylesheet.css" />
 
-<div class="padding">
+<div>
     <h2>Results:</h2>
+    <div class="results_scroll">
     <table>
-    	<tr class="results">
+    	<tr class="results_key">
     		<td> Place </td>
     		<td> Year </td>
     		<td> Name </td>
@@ -16,7 +17,7 @@
     		<td> Speed Rating </td>
     	</tr>
     {% for result in results %}
-    	<tr>
+    	<tr class="results">
         	<td> {{ result[0] }} </td>
         	<td> {{ result[1] }} </td>
         	<td> {{ result[2] }} </td>
@@ -26,6 +27,7 @@
     	</tr>
     {% endfor %}
     </table>
+    </div>
 </div>
 
 {% endblock %}
