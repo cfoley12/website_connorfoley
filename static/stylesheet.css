@@ -23,6 +23,15 @@ img {
 	border-radius: 25px;
 }
 
+img.pics {
+	border-radius: 50px;
+}
+
+.pics:hover {
+	border-radius: 25px;
+
+}
+
 a {
 	color: black;
 }
@@ -62,5 +71,11 @@ tr.results:hover {
 
 tr.results_key {
 	background-color: #3da0b8;
-	
+}
+
+td.pad {
+	padding-bottom: 2px;
+	padding-top: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
