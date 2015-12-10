@@ -40,7 +40,18 @@ def get_courses():
     for courseTuple in courses:
         courseStrings.append(courseTuple[0])
 
-    
+
+    courseStrings = [course.replace('huron', "Huron Meadows Metropark, Brighton, MI") for course in courseStrings]
+    courseStrings = [course.replace('lake_erie', "Lake Erie Metropark, Brownstown, MI") for course in courseStrings]
+    courseStrings = [course.replace('nholly', "Springfield Oaks County Park, Davisburg, MI") for course in courseStrings]
+    courseStrings = [course.replace('bloomer', "Bloomer Park, Rochester Adams, MI") for course in courseStrings]
+    courseStrings = [course.replace('ella', "Ella Sharp Park, Jackson, MI") for course in courseStrings]
+    courseStrings = [course.replace('uncle', "Uncle John's Cider Mill, St. John's, MI") for course in courseStrings]
+    courseStrings = [course.replace('portage', "Portage West MS, Portage, MI") for course in courseStrings]
+    courseStrings = [course.replace('mis', "Michigan International Speedway (MIS), Brooklyn, MI") for course in courseStrings]
+    courseStrings = [course.replace('willow', "Willow Metropark, New Boston, MI") for course in courseStrings]
+    courseStrings = [course.replace('spartan', "Forest Akers East Golf Course, East Lansing, MI") for course in courseStrings]
+
     return courseStrings
 
 
@@ -70,25 +81,25 @@ def get_races(course):
         # each input should allow for a different "query =" statements with different table names
     # this will need to be fixed
     
-    if course == 'huron':
+    if course == 'Huron Meadows Metropark, Brighton, MI':
         query = "SELECT * FROM Huron_Meadows_Metro_Park"
-    if course == 'lake_erie':
+    if course == 'Lake Erie Metropark, Brownstown, MI':
         query = "SELECT * FROM Lake_Erie_Metro_Park"
-    if course == 'nholly':
+    if course == 'Springfield Oaks County Park, Davisburg, MI ':
         query = "SELECT * FROM Springfield_Oaks_county_Park"
-    if course == 'ella':
+    if course == 'Ella Sharp Park, Jackson, MI':
         query = "SELECT * FROM Ella_Sharp_Park"
-    if course == 'bloomer':
+    if course == 'Bloomer Park, Rochester Adams, MI':
         query = "SELECT * FROM Bloomer_Park"
-    if course == 'uncle':
+    if course == "Uncle John's Cider Mill, St. John's, MI":
         query = "SELECT * FROM Uncle_Johns_Cider_Mill"
-    if course == 'portage':
+    if course == 'Portage West MS, Portage, MI':
         query = "SELECT * FROM Portage_Middle_School"
-    if course == 'mis':
+    if course == 'Michigan International Speedway (MIS), Brooklyn, MI':
         query = "SELECT * FROM Michigan_International_Speedway"
-    if course == 'willow':
+    if course == 'Willow Metropark, New Boston, MI':
         query = "SELECT * FROM Willow_Metropark"
-    if course == 'spartan':
+    if course == 'Forest Akers East Golf Course, East Lansing, MI':
         query = "SELECT * FROM Forest_Akers_East_Golf_Course"
 
     cursor.execute(query)
@@ -109,7 +120,6 @@ def get_races(course):
     #races = races[0]
     # races is now a list of the names of the races
 
-    
     return raceStrings
 
 
@@ -133,6 +143,8 @@ def get_results(race_name, course_name):
     # conn.cursor will return a cursor object, you can use this cursor to perform queries
     cursor = conn.cursor()
     # print "Connected!\n"
+
+    # adjusting race_names appropriately
     if race_name == "AARC Early Bird Open":
         db_race_name = "aarc_early_bird"
     if race_name == "MHSAA Regional 04-1":
@@ -238,14 +250,33 @@ def get_results(race_name, course_name):
     if race_name == "Ramblin Rock Invitational JV":
         db_race_name = "ramblin_rock_jv"
 
-
-
+    # adjusting course names accordingly
+    if course_name == "Huron Meadows Metropark, Brighton, MI":
+        db_course_name = "huron"
+    if course_name == "Lake Erie Metropark, Brownstown, MI":
+        db_course_name = "lake_erie"
+    if course_name == "Springfield Oaks County Park, Davisburg, MI":
+        db_course_name = "nholly"
+    if course_name == "Bloomer Park, Rochester Adams, MI":
+        db_course_name = "bloomer"
+    if course_name == "Ella Sharp Park, Jackson, MI":
+        db_course_name = "ella"
+    if course_name == "Uncle John's Cider Mill, St. John's, MI":
+        db_course_name = "uncle"
+    if course_name == "Portage West MS, Portage, MI":
+        db_course_name = "portage"
+    if course_name == "Michigan International Speedway (MIS), Brooklyn, MI":
+        db_course_name = "mis"
+    if course_name == "Willow Metropark, New Boston, MI":
+        db_course_name = "willow"
+    if course_name == "Forest Akers East Golf Course, East Lansing, MI":
+        db_course_name = "spartan"
 
     # creating the query
     # make if statements that allow an input to a function
         # each input should allow for a different "query =" statements with different table names
     # this will need to be fixed
-    query =  "SELECT * FROM " + course_name + " WHERE race_name LIKE '%" + db_race_name + "%'"
+    query =  "SELECT * FROM " + db_course_name + " WHERE race_name LIKE '%" + db_race_name + "%'"
     print query
     cursor.execute(query)
     conn.commit()
@@ -263,5 +294,5 @@ def get_results(race_name, course_name):
     return resultList
 
 
-if __name__ == "__main__":
-    get_courses()
+'''if __name__ == "__main__":
+    get_races("Huron Meadows Metropark, Brighton, MI")'''
