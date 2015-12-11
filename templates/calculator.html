@@ -22,7 +22,7 @@
 		<!--<input type="submit" value="Submit">-->
 	</form>
 
-<button onclick="total_seconds()">Submit</button>
+<button onclick="total_seconds()">Calculate</button>
 
 <p id="demo"></p>
 
@@ -37,6 +37,10 @@ function total_seconds() {
     document.getElementById("demo").innerHTML = text;
 }
 </script>
+
+{% for course in courses %}
+    {{ course }}<br>
+{% endfor %}
 
 </div>
 
