@@ -11,16 +11,32 @@
 	</body>
 </div>
 <div>
-	<form action="calculator.php" method="get">
+	<form id="ipt" action="calculator.php" method="get">
 		Please enter your time below: <br>
-		Minutes: <input type="number" name="minutes"><br>
-		Seconds: <input type="number" name="seconds"><br><br>
+		Minutes: <input type="number" name="minutes" value="00"><br>
+		Seconds: <input type="number" name="seconds" value="00.00"><br><br>
 		Please select the course you ran on:<br>
 		{% for course in courses %}
     		{{ course }}<br>
     	{% endfor %}
-		<input type="submit" value="Submit">
+		<!--<input type="submit" value="Submit">-->
 	</form>
+
+<button onclick="total_seconds()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function total_seconds() {
+    var x = document.getElementById("ipt");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
 
 </div>
 
