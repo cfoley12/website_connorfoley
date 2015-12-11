@@ -55,5 +55,11 @@ def results(race_name):
     print options['results']
     return render_template('results.html', **options)
 	
+@app.route('/calculator.html')
+def calculator():
+    options = {}
 
+    # options['terms'] = get_terms()
+
+    return render_template('calculator.html', **options)
 
