@@ -4,9 +4,24 @@
 
 <link type="text/css" rel="stylesheet" href="/static/stylesheet.css" />
 
-<body>
-	<p>We have created this calculator to allow users to enter a time they have run on one of the listed courses and recieve what they should expect to run on another of the listed courses.</p>
-</body>
+<div>
+	<h2>Race Comparison Calculator</h2>
+	<body>
+		<p>We have created this calculator to allow users to enter a time they have run on one of the listed courses and recieve what they should expect to run on another of the listed courses.</p>
+	</body>
+</div>
+<div>
+	<form action="calculator.php" method="get">
+		Please enter your time below: <br>
+		Minutes: <input type="number" name="minutes"><br>
+		Seconds: <input type="number" name="seconds"><br><br>
+		Please select the course you ran on:<br>
+		{% for course in courses %}
+    		{{ course }}<br>
+    	{% endfor %}
+		<input type="submit" value="Submit">
+	</form>
 
+</div>
 
 {% endblock %}

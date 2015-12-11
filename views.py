@@ -59,7 +59,15 @@ def results(race_name):
 def calculator():
     options = {}
 
-    # options['terms'] = get_terms()
+    options['courses'] = get_courses()
 
     return render_template('calculator.html', **options)
+
+@app.route('/calculator.php')
+def calculator_results():
+    options = {}
+
+    options['courses'] = get_courses()
+
+    return render_template('calculator.php', **options)
 
