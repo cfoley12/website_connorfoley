@@ -31,12 +31,12 @@
   		</select>
 	</form>
 
-<button onclick="total_seconds()">Calculate</button>
+<button onclick="calculator()">Calculate</button>
 
 <p id="demo"></p>
 
 <script>
-function total_seconds() {
+function calculator() {
     var x = document.getElementById("ipt");
     var text = "";
     var i;
@@ -58,15 +58,147 @@ function total_seconds() {
         seconds = Number(seconds);
 
     var total_secs = 0;
-    total_secs = (minutes * 60) + seconds
+    total_secs = (minutes * 60) + seconds;
+
+    var output = "";
+    var z_athlete = 0;
+    var speed_rating = 0;
+    
+    var tsecs_huron = 0;
+    var tsecs_lake_erie = 0;
+    var tsecs_nholly = 0;
+    var tsecs_bloomer = 0;
+    var tsecs_ella = 0;
+    var tsecs_uncle = 0;
+    var tsecs_portage = 0;
+    var tsecs_mis = 0;
+    var tsecs_willow = 0;
+    var tsecs_spartan = 0;
+
+    var minutes_huron = 0;
+    var minutes_lake_erie = 0;
+    var minutes_nholly = 0;
+    var minutes_bloomer = 0;
+    var minutes_ella = 0;
+    var minutes_uncle = 0;
+    var minutes_portage = 0;
+    var minutes_mis = 0;
+    var minutes_willow = 0;
+    var minutes_spartan = 0;
+
+    var secs_huron = 0;
+    var secs_lake_erie = 0;
+    var secs_nholly = 0;
+    var secs_bloomer = 0;
+    var secs_ella = 0;
+    var secs_uncle = 0;
+    var secs_portage = 0;
+    var secs_mis = 0;
+    var secs_willow = 0;
+    var secs_spartan = 0;
+
+    //Means for each course
+    var huron_mean = __;
+    var lake_erie_mean = __;
+    var nholly_mean = __;
+    var bloomer_mean = __;
+    var ella_mean = __;
+    var uncle_mean = __;
+    var portage_mean = __;
+    var mis_mean = __;
+    var willow_mean = __;
+    var spartan_mean = __;
+
+	//Z-scores for each course
+	var huron_z = __;
+    var lake_erie_z = __;
+    var nholly_z = __;
+    var bloomer_z = __;
+    var ella_z = __;
+    var uncle_z = __;
+    var portage_z = __;
+    var mis_z = __;
+    var willow_z = __;
+    var spartan_z = __;
+	
+    //Std_dev for each course
+    var huron_std = __;
+    var lake_erie_std = __;
+    var nholly_std = __;
+    var bloomer_std = __;
+    var ella_std = __;
+    var uncle_std = __;
+    var portage_std = __;
+    var mis_std = __;
+    var willow_std = __;
+    var spartan_std = __;
+
+    // if statements for each course
+    if ((minutes < 0) || (seconds < 0) || (course == "none")) {
+    	output = "Invalid Input" <br> "Please insure that you enter positive time variables and chose a course" <br>;
     }
-    document.getElementById("demo").innerHTML = total_secs;
+    if (course == "huron") {
+		var z_athlete = (total_seconds - huron_mean) / huron_std;
+		var speed_rating = 50 + (-1 *(huron_z * 3)) + (-1 * (z_athlete * 30));
+		
+		//huron
+		tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+		minutes_huron = Math.floor(tsecs_huron / 60);
+		secs_huron = tsecs_huron - (60 * minutes_huron);
+
+		//lake_erie
+		tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+		minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+		secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+
+		//nholly
+		tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+		minutes_nholly = Math.floor(tsecs_nholly / 60);
+		secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+
+		//bloomer
+		tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+		minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+		secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+
+		//ella
+		tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+		minutes_ella = Math.floor(tsecs_ella / 60);
+		secs_ella = tsecs_ella - (60 * minutes_ella);
+
+		//uncle
+		tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+		minutes_uncle = Math.floor(tsecs_uncle / 60);
+		secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+
+		//portage
+		tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+		minutes_portage = Math.floor(tsecs_portage / 60);
+		secs_portage = tsecs_portage - (60 * minutes_portage);
+
+		//mis
+		tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+		minutes_mis = Math.floor(tsecs_mis / 60);
+		secs_mis = tsecs_mis - (60 * minutes_mis);
+
+		//willow
+		tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+		minutes_willow = Math.floor(tsecs_willow / 60);
+		secs_willow = tsecs_willow - (60 * minutes_willow);
+
+		//spartan
+		tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+		minutes_spartan = Math.floor(tsecs_spartan / 60);
+		secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+
+    }
+    
+
+    }
+
+    document.getElementById("demo").innerHTML = output;
 }
 </script>
-
-{% for course in courses %}
-    {{ course }}<br>
-{% endfor %}
 
 </div>
 
