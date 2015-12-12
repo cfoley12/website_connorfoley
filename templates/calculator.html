@@ -16,9 +16,19 @@
 		Minutes: <input type="number" name="minutes" value="00"><br>
 		Seconds: <input type="number" name="seconds" value="00.00"><br><br>
 		Please select the course you ran on:<br>
-		{% for course in courses %}
-    		{{ course }}<br>
-    	{% endfor %}
+		<select name="courses">
+			<option value="none">--Please select a course from below--</option>
+    		<option value="huron">Huron Meadows Metropark, Brighton, MI</option>
+    		<option value="lake_erie">Lake Erie Metropark, Brownstown, MI</option>
+    		<option value="nholly">Springfield Oaks County Park, Davisburg, MI</option>
+    		<option value="bloomer">Bloomer Park, Rochester Adams, MI</option>
+    		<option value="ella">Ella Sharp Park, Jackson, MI</option>
+    		<option value="uncle">Uncle John's Cider Mill, St. John's, MI</option>
+    		<option value="portage">Portage West MS, Portage, MI</option>
+    		<option value="mis">Michigan International Speedway (MIS), Brooklyn, MI</option>
+    		<option value="willow">Willow Metropark, New Boston, MI</option>
+    		<option value="spartan">Forest Akers East Golf Course, East Lansing, MI</option>
+  		</select>
 	</form>
 
 <button onclick="total_seconds()">Calculate</button>
@@ -32,13 +42,17 @@ function total_seconds() {
     var i;
     for (i = 0; i < x.length ;i++) {
         text += x.elements[i].value + "<br>";
-        if (i < 1) {
+        if (i == 0) {
         	var minutes = "";
-        	minutes += x.elements[i].value;
+        	minutes = x.elements[i].value;
         }
-        else {
+        if (i == 1) {
         	var seconds = "";
-        	seconds += x.elements[i].value;
+        	seconds = x.elements[i].value;
+        }
+        if (i == 2) {
+        	var course = "";
+        	course = x.elements[i].value;
         }
         minutes = Number(minutes);
         seconds = Number(seconds);
