@@ -85,8 +85,8 @@ def get_races(course):
         query = "SELECT * FROM Huron_Meadows_Metro_Park"
     if course == 'Lake Erie Metropark, Brownstown, MI':
         query = "SELECT * FROM Lake_Erie_Metro_Park"
-    if course == 'Springfield Oaks County Park, Davisburg, MI ':
-        query = "SELECT * FROM Springfield_Oaks_county_Park"
+    if course == 'Springfield Oaks County Park, Davisburg, MI':
+        query = "SELECT * FROM Springfield_Oaks_County_Park"
     if course == 'Ella Sharp Park, Jackson, MI':
         query = "SELECT * FROM Ella_Sharp_Park"
     if course == 'Bloomer Park, Rochester Adams, MI':
