@@ -19,7 +19,6 @@
 		{% for course in courses %}
     		{{ course }}<br>
     	{% endfor %}
-		<!--<input type="submit" value="Submit">-->
 	</form>
 
 <button onclick="total_seconds()">Calculate</button>
@@ -33,8 +32,21 @@ function total_seconds() {
     var i;
     for (i = 0; i < x.length ;i++) {
         text += x.elements[i].value + "<br>";
+        if (i < 1) {
+        	var minutes = "";
+        	minutes += x.elements[i].value;
+        }
+        else {
+        	var seconds = "";
+        	seconds += x.elements[i].value;
+        }
+        minutes = Number(minutes);
+        seconds = Number(seconds);
+
+    var total_secs = 0;
+    total_secs = (minutes * 60) + seconds
     }
-    document.getElementById("demo").innerHTML = text;
+    document.getElementById("demo").innerHTML = total_secs;
 }
 </script>
 
