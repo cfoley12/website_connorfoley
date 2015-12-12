@@ -104,11 +104,8 @@ def z_score_course(list1, mean_michigan_, std_dev_michigan_):
 
 def calc_speed_rating(z_score_course_, z_score_athlete_):
 
-<<<<<<< HEAD
-	speed_rating = float(200 + (-1 * (z_score_course_ * 52)) + (z_score_athlete_ * 52))
-=======
 	speed_rating = float(50 + (-1 *(z_score_course_ * 3)) + (-1 * (z_score_athlete_ * 30)))
->>>>>>> b4cec337e95b32fcb3b4eaac4fa9a639e9bb256b
+
 	return speed_rating
 
 def speed_rating_loop(list1, z_score_course_):
