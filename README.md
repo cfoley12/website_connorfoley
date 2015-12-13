@@ -21,7 +21,7 @@ CSS
 
 Calculator
 	Our calculator feature allows a user to enter his time on a specific course and recieve an output for our predicted times on each course we analyzed.
-	We accomplished this by taking input through an html <form> and then doing analysis with a javascript code (see templates/calculator.html for the specific code). We then print the result of the javascript code.
+	We accomplished this by taking input through an html form and then doing analysis with a javascript code (see templates/calculator.html for the specific code). We then print the result of the javascript code.
 
 
 We hope you enjoy!
