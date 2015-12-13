@@ -58,6 +58,8 @@ function calculator() {
         seconds = Number(seconds);
     }
 
+    //Defining all of the variables
+
     var total_secs = 0;
     total_seconds = (minutes * 60) + seconds;
 
@@ -134,10 +136,13 @@ function calculator() {
     var willow_std = 180.421;
     var spartan_std = 160.284;
 
-    // if statements for each course
-    if ((minutes < 0) || (seconds < 0) || (course === "none")) {
-    	output = "Invalid Input <br> Please insure that you enter positive time variables and chose a course";
+    //Border case control
+
+    if (course === "none") {
+        output = "Invalid Input <br> Please choose a course";
     }
+
+    // if statements for each course   
 
     if (course === "huron") {
 		z_athlete = (total_seconds - huron_mean) / huron_std;
@@ -148,60 +153,110 @@ function calculator() {
 		minutes_huron = Math.floor(tsecs_huron / 60);
 		secs_huron = tsecs_huron - (60 * minutes_huron);
 		secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
 
 		//lake_erie
 		tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
 		minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
 		secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
 		secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
 
 		//nholly
 		tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
 		minutes_nholly = Math.floor(tsecs_nholly / 60);
 		secs_nholly = tsecs_nholly - (60 * minutes_nholly);
 		secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
 
 		//bloomer
 		tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
 		minutes_bloomer = Math.floor(tsecs_bloomer / 60);
 		secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
 		secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
 
 		//ella
 		tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
 		minutes_ella = Math.floor(tsecs_ella / 60);
 		secs_ella = tsecs_ella - (60 * minutes_ella);
 		secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
 
 		//uncle
 		tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
 		minutes_uncle = Math.floor(tsecs_uncle / 60);
 		secs_uncle = tsecs_uncle - (60 * minutes_uncle);
 		secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
 
 		//portage
 		tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
 		minutes_portage = Math.floor(tsecs_portage / 60);
 		secs_portage = tsecs_portage - (60 * minutes_portage);
 		secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
 
 		//mis
 		tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
 		minutes_mis = Math.floor(tsecs_mis / 60);
 		secs_mis = tsecs_mis - (60 * minutes_mis);
 		secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
 
 		//willow
 		tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
 		minutes_willow = Math.floor(tsecs_willow / 60);
 		secs_willow = tsecs_willow - (60 * minutes_willow);
 		secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
 
 		//spartan
 		tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
 		minutes_spartan = Math.floor(tsecs_spartan / 60);
 		secs_spartan = tsecs_spartan - (60 * minutes_spartan);
 		secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
 
         speed_rating = speed_rating.toFixed(2);
 
@@ -212,11 +267,1199 @@ function calculator() {
 				minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
 				minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
 				minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
-				minutes_uncle + ":" + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+				minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
 				minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
 				minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
 				minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
 				minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "lake_erie") {
+        z_athlete = (total_seconds - lake_erie_mean) / lake_erie_std;
+        speed_rating = 50 + (-1 *(lake_erie_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "nholly") {
+        z_athlete = (total_seconds - nholly_mean) / nholly_std;
+        speed_rating = 50 + (-1 *(nholly_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "bloomer") {
+        z_athlete = (total_seconds - bloomer_mean) / bloomer_std;
+        speed_rating = 50 + (-1 *(huron_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "ella") {
+        z_athlete = (total_seconds - ella_mean) / ella_std;
+        speed_rating = 50 + (-1 *(ella_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "uncle") {
+        z_athlete = (total_seconds - uncle_mean) / uncle_std;
+        speed_rating = 50 + (-1 *(uncle_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "portage") {
+        z_athlete = (total_seconds - portage_mean) / portage_std;
+        speed_rating = 50 + (-1 *(huron_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "mis") {
+        z_athlete = (total_seconds - mis_mean) / mis_std;
+        speed_rating = 50 + (-1 *(mis_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "willow") {
+        z_athlete = (total_seconds - willow_mean) / willow_std;
+        speed_rating = 50 + (-1 *(willow_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
+    
+
+    }
+
+    if (course === "spartan") {
+        z_athlete = (total_seconds - spartan_mean) / spartan_std;
+        speed_rating = 50 + (-1 *(spartan_z * 3)) + (-1 * (z_athlete * 30));
+        
+        //huron
+        tsecs_huron = ((huron_std * (speed_rating - 50 + (huron_z * 3))) / -30) + huron_mean;
+        minutes_huron = Math.floor(tsecs_huron / 60);
+        secs_huron = tsecs_huron - (60 * minutes_huron);
+        secs_huron = secs_huron.toFixed(2);
+        if (secs_huron < 10) {
+            var temp = "";
+            temp = "0" + String(secs_huron);
+            secs_huron = temp;
+        }
+
+        //lake_erie
+        tsecs_lake_erie = ((lake_erie_std * (speed_rating - 50 + (lake_erie_z * 3))) / -30) + lake_erie_mean;
+        minutes_lake_erie = Math.floor(tsecs_lake_erie / 60);
+        secs_lake_erie = tsecs_lake_erie - (60 * minutes_lake_erie);
+        secs_lake_erie = secs_lake_erie.toFixed(2);
+        if (secs_lake_erie < 10) {
+            var temp = "";
+            temp = "0" + String(secs_lake_erie);
+            secs_lake_erie = temp;
+        }
+
+        //nholly
+        tsecs_nholly = ((nholly_std * (speed_rating - 50 + (nholly_z * 3))) / -30) + nholly_mean;
+        minutes_nholly = Math.floor(tsecs_nholly / 60);
+        secs_nholly = tsecs_nholly - (60 * minutes_nholly);
+        secs_nholly = secs_nholly.toFixed(2);
+        if (secs_nholly < 10) {
+            var temp = "";
+            temp = "0" + String(secs_nholly);
+            secs_nholly = temp;
+        }
+
+        //bloomer
+        tsecs_bloomer = ((bloomer_std * (speed_rating - 50 + (bloomer_z * 3))) / -30) + bloomer_mean;
+        minutes_bloomer = Math.floor(tsecs_bloomer / 60);
+        secs_bloomer = tsecs_bloomer - (60 * minutes_bloomer);
+        secs_bloomer = secs_bloomer.toFixed(2);
+        if (secs_bloomer < 10) {
+            var temp = "";
+            temp = "0" + String(secs_bloomer);
+            secs_bloomer = temp;
+        }
+
+        //ella
+        tsecs_ella = ((ella_std * (speed_rating - 50 + (ella_z * 3))) / -30) + ella_mean;
+        minutes_ella = Math.floor(tsecs_ella / 60);
+        secs_ella = tsecs_ella - (60 * minutes_ella);
+        secs_ella = secs_ella.toFixed(2);
+        if (secs_ella < 10) {
+            var temp = "";
+            temp = "0" + String(secs_ella);
+            secs_ella = temp;
+        }
+
+        //uncle
+        tsecs_uncle = ((uncle_std * (speed_rating - 50 + (uncle_z * 3))) / -30) + uncle_mean;
+        minutes_uncle = Math.floor(tsecs_uncle / 60);
+        secs_uncle = tsecs_uncle - (60 * minutes_uncle);
+        secs_uncle = secs_uncle.toFixed(2);
+        if (secs_uncle < 10) {
+            var temp = "";
+            temp = "0" + String(secs_uncle);
+            secs_uncle = temp;
+        }
+
+        //portage
+        tsecs_portage = ((portage_std * (speed_rating - 50 + (portage_z * 3))) / -30) + portage_mean;
+        minutes_portage = Math.floor(tsecs_portage / 60);
+        secs_portage = tsecs_portage - (60 * minutes_portage);
+        secs_portage = secs_portage.toFixed(2);
+        if (secs_portage < 10) {
+            var temp = "";
+            temp = "0" + String(secs_portage);
+            secs_portage = temp;
+        }
+
+        //mis
+        tsecs_mis = ((mis_std * (speed_rating - 50 + (mis_z * 3))) / -30) + mis_mean;
+        minutes_mis = Math.floor(tsecs_mis / 60);
+        secs_mis = tsecs_mis - (60 * minutes_mis);
+        secs_mis = secs_mis.toFixed(2);
+        if (secs_mis < 10) {
+            var temp = "";
+            temp = "0" + String(secs_mis);
+            secs_mis = temp;
+        }
+
+        //willow
+        tsecs_willow = ((willow_std * (speed_rating - 50 + (willow_z * 3))) / -30) + willow_mean;
+        minutes_willow = Math.floor(tsecs_willow / 60);
+        secs_willow = tsecs_willow - (60 * minutes_willow);
+        secs_willow = secs_willow.toFixed(2);
+        if (secs_willow < 10) {
+            var temp = "";
+            temp = "0" + String(secs_willow);
+            secs_willow = temp;
+        }
+
+        //spartan
+        tsecs_spartan = ((spartan_std * (speed_rating - 50 + (spartan_z * 3))) / -30) + spartan_mean;
+        minutes_spartan = Math.floor(tsecs_spartan / 60);
+        secs_spartan = tsecs_spartan - (60 * minutes_spartan);
+        secs_spartan = secs_spartan.toFixed(2);
+        if (secs_spartan < 10) {
+            var temp = "";
+            temp = "0" + String(secs_spartan);
+            secs_spartan = temp;
+        }
+
+        speed_rating = speed_rating.toFixed(2);
+
+        output ="Your global speed rating is: " + speed_rating + "<br>" +
+                "You would finished in: <br>" +
+                minutes_huron + ":" + secs_huron + " at Huron Meadows Metropark, Brighton, MI" + "<br>" +
+                minutes_lake_erie + ":" + secs_lake_erie + " at Lake Erie Metropark, Brownstown, MI" + "<br>" +
+                minutes_nholly + ":" + secs_nholly + " at Springfield Oaks County Park, Davisburg, MI" + "<br>" +
+                minutes_bloomer + ":" + secs_bloomer + " at Bloomer Park, Rochester Adams, MI" + "<br>" +
+                minutes_ella + ":" + secs_ella + " at Ella Sharp Park, Jackson, MI" + "<br>" +
+                minutes_uncle + ":" + secs_uncle + " at Uncle John's Cider Mill, St. John's, MI" + "<br>" +
+                minutes_portage + ":" + secs_portage + " at Portage West MS, Portage, MI" + "<br>" +
+                minutes_mis + ":" + secs_mis + " at Michigan International Speedway (MIS), Brooklyn, MI" + "<br>" +
+                minutes_willow + ":" + secs_willow + " at Willow Metropark, New Boston, MI" + "<br>" +
+                minutes_spartan + ":" + secs_spartan + " at Forest Akers East Golf Course, East Lansing, MI";
     
 
     }
