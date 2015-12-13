@@ -138,13 +138,13 @@ function calculator() {
 
     //Border case control
 
-    if (course === "none") {
-        output = "Invalid Input <br> Please choose a course";
+    if (course === "none" || minutes < 0 || seconds < 0) {
+        output = "Invalid Input <br> Please choose a course <br> Please enter a positive value for \"minutes\" and/or \"seconds\"";
     }
 
     // if statements for each course   
 
-    if (course === "huron") {
+    if (course === "huron" && minutes > 0 && seconds >= 0) {
 		z_athlete = (total_seconds - huron_mean) / huron_std;
 		speed_rating = 50 + (-1 *(huron_z * 3)) + (-1 * (z_athlete * 30));
 		
@@ -276,7 +276,7 @@ function calculator() {
 
     }
 
-    if (course === "lake_erie") {
+    if (course === "lake_erie" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - lake_erie_mean) / lake_erie_std;
         speed_rating = 50 + (-1 *(lake_erie_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -408,7 +408,7 @@ function calculator() {
 
     }
 
-    if (course === "nholly") {
+    if (course === "nholly" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - nholly_mean) / nholly_std;
         speed_rating = 50 + (-1 *(nholly_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -540,7 +540,7 @@ function calculator() {
 
     }
 
-    if (course === "bloomer") {
+    if (course === "bloomer" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - bloomer_mean) / bloomer_std;
         speed_rating = 50 + (-1 *(huron_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -672,7 +672,7 @@ function calculator() {
 
     }
 
-    if (course === "ella") {
+    if (course === "ella" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - ella_mean) / ella_std;
         speed_rating = 50 + (-1 *(ella_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -804,7 +804,7 @@ function calculator() {
 
     }
 
-    if (course === "uncle") {
+    if (course === "uncle" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - uncle_mean) / uncle_std;
         speed_rating = 50 + (-1 *(uncle_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -936,7 +936,7 @@ function calculator() {
 
     }
 
-    if (course === "portage") {
+    if (course === "portage" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - portage_mean) / portage_std;
         speed_rating = 50 + (-1 *(huron_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -1068,7 +1068,7 @@ function calculator() {
 
     }
 
-    if (course === "mis") {
+    if (course === "mis" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - mis_mean) / mis_std;
         speed_rating = 50 + (-1 *(mis_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -1200,7 +1200,7 @@ function calculator() {
 
     }
 
-    if (course === "willow") {
+    if (course === "willow" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - willow_mean) / willow_std;
         speed_rating = 50 + (-1 *(willow_z * 3)) + (-1 * (z_athlete * 30));
         
@@ -1332,7 +1332,7 @@ function calculator() {
 
     }
 
-    if (course === "spartan") {
+    if (course === "spartan" && minutes > 0 && seconds >= 0) {
         z_athlete = (total_seconds - spartan_mean) / spartan_std;
         speed_rating = 50 + (-1 *(spartan_z * 3)) + (-1 * (z_athlete * 30));
         
