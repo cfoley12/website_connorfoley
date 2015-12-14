@@ -79,3 +79,8 @@ td.pad {
 	padding-left: 5px;
 	padding-right: 5px;
 }
+
+div.formatted {
+	margin-left: 200px;
+	margin-right: 200px;
+}
